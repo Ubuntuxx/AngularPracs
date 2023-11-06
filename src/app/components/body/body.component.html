@@ -2,28 +2,24 @@
 	<div class="col">
 		<h1>*ngIf</h1>
 		<hr>
-		<div class="card bg-primary" style="width: 100%; text-decoration: none;">
+		<div *ngIf="mostrar" class="card" style="width: 100%; text-decoration: none;">
 			<div class="card-body">
-			  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			  <a href="#" class="card-link">Card link</a>
-			  <a href="#" class="card-link">Another link</a>
+				<p class="card-text">Autor: {{ frase.autor}} </p>
+				<p class="card-text">Mensaje: {{ frase.mensaje}} </p>
+				<a href="#" class="card-link">Link</a>
+				<a href="#" class="card-link">Another link</a>
 			</div>
-		  </div>
-		  <button class="btn btn-outline-primary mt-2 " style="width: 100%;">
+		</div>
+		<button (click)="mostrar = !mostrar" class="btn btn-outline-primary mt-2 " style="width: 100%;">
 			Mostrar/Ocultar
-		  </button>
+		</button>
 	</div>
 
 	<div class="col">
 		<h1>*ngFor</h1>
 		<hr>
 		<ul class="list-group">
-			<li class="list-group-item">An item</li>
-			<li class="list-group-item">A second item</li>
-			<li class="list-group-item">A third item</li>
-			<li class="list-group-item">A fourth item</li>
-			<li class="list-group-item">And a fifth one</li>
-		  </ul>
-	<div>
-
+			<li *ngFor="let person of personajes; let i = index" class="list-group-item">{{ i + 1 }} - {{person}}</li>
+		</ul>
+	</div>
 </div>
